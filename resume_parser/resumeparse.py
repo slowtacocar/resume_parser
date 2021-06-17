@@ -484,6 +484,8 @@ class resumeparse(object):
                 else:
                     end_date_find = re.compile(end_date, re.IGNORECASE)
                     end_date_find = re.search(end_date_find, date_range)
+                    
+                    non_alpha_find = re.search(non_alpha, end_date_find.group().strip())
 
                     end_year_result = end_date_find.group().strip().split(non_alpha_find.group())[-1]
 
